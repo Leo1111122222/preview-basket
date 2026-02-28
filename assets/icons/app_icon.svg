@@ -1,0 +1,41 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#FF7A00" rx="180"/>
+  
+  <!-- Shopping Basket Icon -->
+  <g transform="translate(512, 512)">
+    <!-- Basket Body -->
+    <path d="M -200 -50 L -150 150 L 150 150 L 200 -50 Z" 
+          fill="#FFFFFF" 
+          stroke="#111111" 
+          stroke-width="20"/>
+    
+    <!-- Basket Handle -->
+    <path d="M -180 -50 Q 0 -200 180 -50" 
+          fill="none" 
+          stroke="#FFFFFF" 
+          stroke-width="25" 
+          stroke-linecap="round"/>
+    
+    <!-- Preview/Link Symbol (Chain Link) -->
+    <g transform="translate(0, 30)">
+      <!-- Left Link -->
+      <ellipse cx="-60" cy="0" rx="35" ry="50" 
+               fill="none" 
+               stroke="#111111" 
+               stroke-width="18"/>
+      
+      <!-- Right Link -->
+      <ellipse cx="60" cy="0" rx="35" ry="50" 
+               fill="none" 
+               stroke="#111111" 
+               stroke-width="18"/>
+      
+      <!-- Connection -->
+      <line x1="-30" y1="0" x2="30" y2="0" 
+            stroke="#111111" 
+            stroke-width="18" 
+            stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

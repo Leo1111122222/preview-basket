@@ -1,0 +1,120 @@
+name: preview_basket
+description: "سلة المعاينات - تطبيق ذكي لاستخراج وتنظيم معاينات الروابط"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # State Management - BLoC
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  equatable: ^2.0.5
+  
+  # Routing
+  go_router: ^14.6.2
+  
+  # Dependency Injection
+  get_it: ^8.0.2
+  injectable: ^2.5.0
+  
+  # Link Preview & Metadata
+  http: ^1.2.2
+  html: ^0.15.4
+  
+  # Network & API
+  dio: ^5.7.0
+  connectivity_plus: ^6.1.0
+  
+  # Firebase
+  firebase_core: ^3.8.1
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.2
+  
+  # Local Storage
+  shared_preferences: ^2.3.3
+  
+  # UI & Design
+  google_fonts: ^6.2.1
+  flutter_screenutil: ^5.9.3
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+  lottie: ^3.2.0
+  flutter_svg: ^2.0.10
+  
+  # Utilities
+  intl: ^0.20.1
+  url_launcher: ^6.3.1
+  share_plus: ^10.0.2
+  uuid: ^4.5.1
+  path_provider: ^2.1.5
+  
+  # Error Handling & Logging
+  logger: ^2.5.0
+  dartz: ^0.10.1
+  
+  # Code Generation
+  json_annotation: ^4.9.0
+  
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Linting
+  flutter_lints: ^5.0.0
+  
+  # Code Generation
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  injectable_generator: ^2.6.2
+  
+  # Testing
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
+  
+  # Assets
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.3
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/logo/
+
+# Flutter Launcher Icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FF7A00"
+  adaptive_icon_foreground: "assets/icons/icon.png"
+
+# Flutter Native Splash
+flutter_native_splash:
+  color: "#FF7A00"
+  color_dark: "#111111"
+  # image: "assets/icons/icon.png"  # معطل مؤقتاً
+  android: true
+  ios: true
+  web: false
+  fullscreen: true
+  android_12:
+    # image: "assets/icons/icon.png"  # معطل مؤقتاً
+    icon_background_color: "#FF7A00"
+    icon_background_color_dark: "#111111"

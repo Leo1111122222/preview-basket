@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Collections Table - جدول المجموعات
+    match /collections/{collectionId} {
+      // القراءة: إذا كان المستخدم مسجل دخول ويملك المجموعة
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // الإنشاء: إذا كان المستخدم مسجل دخول ويضع userId الخاص به
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      
+      // التحديث والحذف: إذا كان المستخدم يملك المجموعة
+      allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+    
+    // Links Table - جدول الروابط
+    match /links/{linkId} {
+      // القراءة: إذا كان المستخدم مسجل دخول ويملك الرابط
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // الإنشاء: إذا كان المستخدم مسجل دخول ويضع userId الخاص به
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      
+      // التحديث والحذف: إذا كان المستخدم يملك الرابط
+      allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+    
+    // Users Table - معلومات المستخدمين
+    match /users/{userId} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+  }
+}
